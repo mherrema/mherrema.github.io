@@ -1,5 +1,7 @@
 .logo {
     max-height: 500px;
+    -webkit-animation-delay: 2s !important; /* Chrome, Safari, Opera */
+    animation-delay: 2s !important;
 }
 .row {
     padding-top: 30px;
@@ -17,6 +19,19 @@ h1 {
     background: url('../images/beach.jpg') no-repeat center center fixed;
     background-size: cover;
     background-position: 0px 0px;
+    opacity: 0;
+    /* make things invisible upon start */
+    -webkit-animation: fadeIn ease-in 1;
+    /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+    -webkit-animation-fill-mode: forwards;
+    /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
 }
 a {
     color: #333;
@@ -30,8 +45,8 @@ a:hover {
 }
 body {
     padding-bottom: 100px;
+    overflow-x: hidden;
 }
-
 
 
 @media (min-width: 920px) {
@@ -122,4 +137,14 @@ body {
     -webkit-animation-delay: 1.6s;
     -moz-animation-delay: 1.6s;
     animation-delay: 1.6s;
+}
+
+
+html {
+/*  overflow-x: hidden;*/
+  width: 100%;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
 }

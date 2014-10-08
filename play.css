@@ -59,9 +59,7 @@ h2 {
     color: #fff;
     background-color: rgba(180,180,186,.9); 
     padding: 20px;
-    -webkit-border-radius: 20px;
--moz-border-radius: 20px;
-border-radius: 20px;
+    
     margin: 0 auto;
 }
 
@@ -72,6 +70,13 @@ border-radius: 20px;
     -webkit-border-radius: 20px;
 -moz-border-radius: 20px;
 border-radius: 20px;
+}
+
+.width-100{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 
 .hi-icon-wrap {
