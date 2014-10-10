@@ -22,7 +22,7 @@ h1 {
     background-size: cover;
     background-position: 0px 0px;
     opacity: 0;
-    min-width: 100%;
+/*    max-width: 120%;*/
     /* make things invisible upon start */
     -webkit-animation: fadeIn ease-in 1;
     /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
@@ -186,4 +186,28 @@ html {
 body {
     width: 100%;
     overflow-x: hidden;
+}
+
+@media(max-width: 768px){
+    .head {
+    /*    background-size: 100%;*/
+    background: url('../images/beach.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-position: 0px 0px;
+/*    min-width: 100%;*/
+    opacity: 0;
+/*    max-width: 120%;*/
+    /* make things invisible upon start */
+    -webkit-animation: fadeIn ease-in 1;
+    /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+    -webkit-animation-fill-mode: forwards;
+    /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+}
 }
