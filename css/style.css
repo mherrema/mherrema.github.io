@@ -191,7 +191,7 @@ body {
 @media(max-width: 768px){
     .head {
     /*    background-size: 100%;*/
-    background: url('../images/beach.jpg') no-repeat;
+    background: url('../images/beach.gif') no-repeat;
     -webkit-background-size: auto 100%;
   -moz-background-size: auto 100%;
   -o-background-size: auto 100%;
