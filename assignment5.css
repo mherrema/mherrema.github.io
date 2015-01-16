@@ -1,0 +1,32 @@
+body{
+    font-family: "times new roman";
+    font-size: medium;
+    color: black;
+}
+table p{
+    font-size: small;
+}
+ul{
+    color: blue;
+}
+p > .best{
+    font-style: italic;
+}
+a{
+    color: red;
+}
+a:visited{
+    color: green;
+}
+table{
+    margin: 2px;
+}
+table table{
+    margin: 1px;
+}
+.odd{
+    background: #ddd;
+}
+.links{
+    font-family: sans-serif;
+}
