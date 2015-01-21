@@ -5,6 +5,7 @@ _This is italic text_
 [[http://www.google.com Link to Google]]
 <<images/cartlogic_square.jpg>>
 <<images/planitup.jpg>>
+<<images/planitu.jpg>>
 This is plain text
 *This is bold text*
 _This is italic text_
