@@ -1,7 +1,7 @@
 This is plain text
 *This is bold text*
 _This is italic text_
-(#993456)
 [[http://www.google.com]]
 [[http://www.google.com Link to Google]]
+<<images/cartlogic_square.jpg>>
 <<images/planitup.jpg>>
