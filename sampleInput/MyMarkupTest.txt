@@ -7,5 +7,5 @@ This should be in *bold* type.
 This should be in _italic_ type.
 
 
-This should be a [[localhost:8000/test2.txt link to something else]]
+This should be a [[/test2.txt link to something else]]
 
