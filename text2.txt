@@ -1,0 +1,9 @@
+This is plain text
+*This is bold text*
+_This is italic text_
+[[http://www.google.com]]
+[[http://www.google.com Link to Google]]
+
+This is plain text
+*This is bold text*
+_This is italic text_
