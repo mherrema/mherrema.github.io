@@ -2,7 +2,7 @@ This is plain text
 *This is bold text*
 _This is italic text_
 [[http://mherrema.github.io/text.txt]]
-[[http://mherrema.github.io/text.txt Link to Original]]
+[[/text.txt Link to Original]]
 
 This is plain text
 *This is bold text*
