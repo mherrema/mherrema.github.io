@@ -9,22 +9,29 @@
     <title>MH Designs</title>
 
     <!-- Bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,700' rel='stylesheet' type='text/css'>
-   <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/portfolio-grid.css">
 
 
     <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-55805316-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+        ga('create', 'UA-55805316-1', 'auto');
+        ga('send', 'pageview');
+    </script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -34,11 +41,11 @@
 
 <body>
     <div class="container-fluid">
-      
+
         <div class="row">
             <div class="col-sm-10 col-sm-offset-1">
-            <h1 class="text-center">Independent Study</h1>
-            <h2>I will be continuing to work on PlanItUp for an independent study while attending GVSU.  The current status supports the following:</h2>
+                <h1 class="text-center">Independent Study</h1>
+                <h2>I will be continuing to work on PlanItUp for an independent study while attending GVSU.  The current status supports the following:</h2>
                 <ul>
                     <h3><li>"MEAN" Stack structure</li></h3>
                     <h3><li>Authenticated login</li></h3>
@@ -52,10 +59,14 @@
         </div>
         <div class="row">
             <div class="col-sm-10 col-sm-offset-1">
-            <h1 class="text-center">Further Improvement</h1>
-            <h2>While the application is fairly built out, there is a good amount to still be implemented:</h2>
+                <h1 class="text-center">Further Improvement</h1>
+                <h2>While the application is fairly built out, there is a good amount to still be implemented:</h2>
                 <ul>
-                    <h3><li>Consistent creation and deletion of all items</li></h3>
+                    <h3><li>Consistent creation and deletion of all items
+                        <ul>
+            <li>Cannot "leave" a project or remove yourself from the task</li>
+        </ul>
+                        </li></h3>
                     <h3><li>Full timetracker implementation</li></h3>
                     <h3><li>Move user profile images to an Amazon CloudFront server</li></h3>
                     <h3><li>Messaging between users</li></h3>
@@ -64,6 +75,17 @@
                     <h3><li>CSS Cleanup</li></h3>
                     <h3><li>Allow uploading of files, tagging to projects, tasks, or discussions</li></h3>
                     <h3><li>Develop API to support a "bearer" token instead of having a session ID to create a more "RESTful" API</li></h3>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <h1 class="text-center">Progress</h1>
+                <h2>Update 1/26/15</h2>
+                <ul>
+                    <h3><li>Users can now tag a task related to a discussion, or discuss a certain task.</li></h3>
+                    <h3><li>Can now add users to a task after task creation.</li></h3>
+
                 </ul>
             </div>
         </div>
@@ -77,8 +99,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/vendor/jquery.stellar.min.js"></script>
 
-    
-    
+
+
     <script>
         $(document).ready(function () {
 
@@ -152,8 +174,12 @@
                             parallaxElements: true,
                             responsive: true,
                             hideDistantElements: false,
-                            hideElement: function($elem) { $elem.hide(); },
-  showElement: function($elem) { $elem.show(); }
+                            hideElement: function ($elem) {
+                                $elem.hide();
+                            },
+                            showElement: function ($elem) {
+                                $elem.show();
+                            }
                         });
 
                         stellarApplied = true;
@@ -161,8 +187,8 @@
                 }
             }
         }
-        
-//        SetUpParallax();
+
+         //        SetUpParallax();
 
         /*$.stellar({
             horizontalScrolling: false,
