@@ -1,24 +1,53 @@
 .logo {
-    max-height: 500px;
+    max-height: 400px;
     -webkit-animation-delay: 2s !important;
     /* Chrome, Safari, Opera */
     animation-delay: 2s !important;
 }
 .row {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 h1,
 h2,
-h3, h4 {
-    font-family: 'Titillium Web', sans-serif;
+h3 {
+    font-family: 'montserrat', sans-serif;
 }
 h1 {
     font-weight: 600;
 }
+.titillium{
+    font-family: 'Titillium Web', sans-serif;
+}
+h2{
+    margin: 0px;
+}
+h4{
+    font-family: 'titillium web', sans-serif;
+}
+.section-container{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.section-title{
+    display: inline-block;
+    color: #fff; 
+    background: #333; 
+    padding: 12px;
+    font-size: 18px;
+    font-family: montserrat;
+    margin: 0px;
+    z-index: 9999;
+}
+.section-content{
+    padding: 15px;
+    margin-bottom: 0px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
 .head {
     /*    background-size: 100%;*/
-    background: url('../images/beach.gif') no-repeat center center fixed;
+    background: url('../images/beach-bg.jpg') no-repeat center center fixed;
     background-size: cover;
     background-position: 0px 0px;
     opacity: 0;
@@ -36,6 +65,9 @@ h1 {
     -moz-animation-duration: 1s;
     animation-duration: 1s;
 }
+.side{
+    
+}
 
 body {
     padding-bottom: 100px;
@@ -46,19 +78,20 @@ body {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    color: #aaa;
-    margin-bottom: 20px;
+    color: #333;
+/*    margin-bottom: 20px;*/
     line-height: 1.42857143;
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
-    -webkit-transition: background 0.2s, color 0.2s;
-    -moz-transition: background 0.2s, color 0.2s;
-    transition: background 0.2s, color 0.2s;
+    -webkit-transition: background 0.2s, opacity 0.2s;
+    -moz-transition: background 0.2s, opacity 0.2s;
+    transition: background 0.2s, opacity 0.2s;
 }
 
 .contact:hover {
     text-decoration: none;
     color: #333;
+    opacity: .7;
 }
 
 .independent-study{
@@ -197,4 +230,55 @@ body {
     -moz-animation-duration: 1s;
     animation-duration: 1s;
 }
+}
+
+/* columns of same height styles */
+
+.row-full-height {
+  height: 100%;
+}
+.col-full-height {
+  height: 100%;
+  vertical-align: middle;
+}
+.row-same-height {
+  display: table;
+  width: 100%;
+  /* fix overflow */
+  table-layout: fixed;
+}
+.col-xs-height {
+  display: table-cell;
+  float: none !important;
+}
+
+@media (min-width: 768px) {
+  .col-sm-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+
+/* vertical alignment styles */
+
+.col-top {
+  vertical-align: top;
+}
+.col-middle {
+  vertical-align: middle;
+}
+.col-bottom {
+  vertical-align: bottom;
 }
