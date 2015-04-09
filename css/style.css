@@ -230,6 +230,18 @@ body {
     -moz-animation-duration: 1s;
     animation-duration: 1s;
 }
+    .side{
+        display: none;
+    }
+    .contact-text{
+        display: none !important;
+    }
+}
+
+@media(max-width: 920px){
+    .side{
+        display: none !important;
+    }
 }
 
 /* columns of same height styles */
