@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta property="og:image" content="http://mitchherrema.com/images/linkedin.jpg">
+    <meta property="og:image" content="http://mherrema.github.io/images/linkedin.jpg">
     <title>MH Designs</title>
 
     <!-- Bootstrap -->
@@ -189,7 +189,7 @@ I have a passion for web development and graphic design.</p>
         </div>
 
 
-        <div class="row">
+        <div class="row" style="padding-bottom:100px;">
             <div class="row-same-height">
                 <div class="col-sm-3 col-sm-height side">
                 </div>
@@ -278,13 +278,19 @@ I have a passion for web development and graphic design.</p>
 
                     /* If the object is completely visible in the window, fade it it */
                     if (center_of_object > center_20_top && center_of_object < center_20_bottom) {
-                        console.log("here");
                         $(this).css("background", "#eee");
 
                     } else {
                         if (center_of_object > center_20_bottom) {
                             if ((100 - Math.abs(center_20_bottom - center_of_object)) > 0 && (100 - Math.abs(center_20_bottom - center_of_object + 1)) > 0) {
-                                $(this).css("background", "-webkit-linear-gradient(left, #eee " + (100 - Math.abs(center_20_bottom - center_of_object)) + "%, white " + (100 - Math.abs(center_20_bottom - center_of_object + 1)) + "%)");
+                                var t = center_of_object;
+                                var c = center_20_bottom - center_of_object;
+                                var b = 100;
+                                var d = center_of_object;
+                                var current = Math.abs(-c *(t/=d)*(t-2) + b);
+                                console.log("Gray: " + current);
+                                console.log("white: " + (parseInt(current) + 1));
+                                $(this).css("background", "-webkit-linear-gradient(left, #eee " + current + "%, white " + (parseFloat(current) + 1) + "%)");
                             }
                             else{
                                 $(this).css("background", "none");
