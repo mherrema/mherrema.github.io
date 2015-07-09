@@ -238,6 +238,13 @@ body {
     }
 }
 
+@media(min-width: 768px){
+    .about-me-section{
+        padding-left:0px; 
+        padding-bottom: 0px;
+    }
+}
+
 @media(max-width: 920px){
     .side{
         display: none !important;
