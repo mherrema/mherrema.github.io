@@ -11,14 +11,13 @@
 h1,
 h2,
 h3 {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 h1 {
     font-weight: 600;
 }
 .titillium{
-    font-family: 'HelveticaNeue-CondensedBold', sans-serif;
-    font-weight: 100
+    font-family: 'Titillium Web', sans-serif;
 }
 h2{
     margin: 0px;
