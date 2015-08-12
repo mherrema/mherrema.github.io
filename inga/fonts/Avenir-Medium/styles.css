@@ -1,14 +1,14 @@
 
 @font-face {
   font-family: 'AvenirLTStd-Medium';
-  src: url('/fonts/Avenir-Medium/AvenirLTStd-Medium.eot') format('embedded-opentype');
+  src: url('/inga/fonts/Avenir-Medium/AvenirLTStd-Medium.eot') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AvenirLTStd-Medium';
-  src:  url('/fonts/Avenir-Medium/AvenirLTStd-Medium.otf')  format('opentype'),
+  src:  url('/inga/fonts/Avenir-Medium/AvenirLTStd-Medium.otf')  format('opentype'),
 	     url(data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAADtwABAAAAAAajgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCQVNFAAA7FAAAAD4A
 AABQiyWUMUZGVE0AADtUAAAAGgAAABxMOcgfR0RFRgAANyQAAABAAAAAUAZIBOxHUE9TAAA4iAAA
 AooAAAZUzR/DH0dTVUIAADdkAAABJAAAAf7ybtNsT1MvMgAAAeQAAABSAAAAYFnUcTVjbWFwAAAE
@@ -275,7 +275,7 @@ PmeLqxP0eAUWK6FaSYjR8w06rGNwRI1QbiNwbAQhG0GJjSCqDqhRJ8R1GhKcdV3YCyIr0xmo5Pzq
 UZ3OQlLn4Kj6oMrGfZAzuJ8T8gLU6yIcspm4NpOwzSTC6fmYGIJ8onoOZZrQS/y+gjjn7DQeZ/QO
 L7Oax8t7SOqDFrAW5B+x+Uf0Cer0BZJahlpbi6itRak2HAfLDhqN7EMT9W/eOhe7iXWAiAaJ5Z7u
 64Ee6hHxLGJ3CRv+L9rZRdEAAHjaY2BkYGDgAGIWBj4GpsyU1Pyi/Nw8BiYXN58QBr6cxJI8BhUG
-NgYQYGRgAqrkYWD8H8YA0oVVFACnHQlwAAB42mNgYGBkAIJjqdtPgehDrzi0YDQATGQGagAA) format('woff'), url('/fonts/Avenir-Medium/AvenirLTStd-Medium.ttf')  format('truetype'), url('/fonts/Avenir-Medium/AvenirLTStd-Medium.svg#AvenirLTStd-Medium') format('svg');
+NgYQYGRgAqrkYWD8H8YA0oVVFACnHQlwAAB42mNgYGBkAIJjqdtPgehDrzi0YDQATGQGagAA) format('woff'), url('/inga/fonts/Avenir-Medium/AvenirLTStd-Medium.ttf')  format('truetype'), url('/inga/fonts/Avenir-Medium/AvenirLTStd-Medium.svg#AvenirLTStd-Medium') format('svg');
   font-weight: normal;
   font-style: normal;
 }

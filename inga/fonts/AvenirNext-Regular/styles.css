@@ -1,14 +1,14 @@
 
 @font-face {
   font-family: 'AvenirNextLTPro-Regular';
-  src: url('/fonts/AvenirNext-Regular/AvenirNextLTPro-Regular.eot') format('embedded-opentype');
+  src: url('/inga/fonts/AvenirNext-Regular/AvenirNextLTPro-Regular.eot') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AvenirNextLTPro-Regular';
-  src:  url('/fonts/AvenirNext-Regular/AvenirNextLTPro-Regular.otf')  format('opentype'),
+  src:  url('/inga/fonts/AvenirNext-Regular/AvenirNextLTPro-Regular.otf')  format('opentype'),
 	     url(data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAH64AA8AAAABNlQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAB+nAAAABwA
 AAAcPuMkckdERUYAAGk8AAAAZwAAAIwSCA9KR1BPUwAAdZwAAAj/AAAxFCG4hSdHU1VCAABppAAA
 C/YAABxKTKtb3k9TLzIAAAHQAAAAXgAAAGCHLkpqY21hcAAABpQAAAJ+AAADlvbwHf9nYXNwAABp
@@ -578,7 +578,7 @@ r+ObuIhv4TE8jifwHQTxJL6Lp3EZz2AGP8Sz+BF+jJ/gp/gZfo5f4Jd4AWH8Cr/Gi/gNfosIXsLL
 TG3UTh3USTvJR920m/ZQD+2lG2kf9dNBGqDBhP/Hj8k/yD9AH6QP0V30Efoo3U330CSdoXvpPvos
 fY7up3P0IJ2nr9JD9DBdoEfoIj1G0/QEPUlP0ffpabpMz9Cz9Bw9Ty9ShF6mV+gq/Zn+Qq/THM3T
 f+gaGdpqbY3m0dZp67UNWo22Sf6t3qS1aK1am9b+P2LtrSAAAAAAAQAAAADGZbfKAAAAALw+pxkA
-AAAAvD7Fjg==) format('woff'), url('/fonts/AvenirNext-Regular/AvenirNextLTPro-Regular.ttf')  format('truetype'), url('/fonts/AvenirNext-Regular/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg');
+AAAAvD7Fjg==) format('woff'), url('/inga/fonts/AvenirNext-Regular/AvenirNextLTPro-Regular.ttf')  format('truetype'), url('/inga/fonts/AvenirNext-Regular/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
