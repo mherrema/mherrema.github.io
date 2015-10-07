@@ -1,0 +1,114 @@
+<!doctype html>
+<html ng-app="todoApp">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+        @import url('fonts/avenir-regular/AvenirNextLTPro-Regular.css');
+        @import url('fonts/avenir-medium/AvenirLTStd-Medium.css');
+    </style>
+    <link rel="stylesheet" href="css/cohort-builder.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div ng-controller="MyController">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Cohort Builder</a>
+
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right" ng-cloak>
+                        <li ng-if="isInState('edit', 'either')"><a href="#" class="btn inga-btn inga-btn-positive" ng-click="goToState('view', 'current')"><i class="glyphicon glyphicon-ok"></i> OK</a></li>
+                        <li ng-if="isInState('view', 'either')"><a href="#" class="btn inga-btn inga-btn-negative">Rename Cohort</a></li>
+                        <li ng-if="isInState('view', 'either')"><a href="#" class="btn inga-btn inga-btn-negative">Delete Cohort</a></li>
+                        <li ng-if="isInState('view', 'either')"><a href="#" class="btn inga-btn inga-btn-positive">Publish Cohort</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="container-fluid">
+            <div class="row cohort-title-row">
+                <h4 class="text-center">My New Cohort</h4>
+            </div>
+            <div class="row above-table-actions-row">
+                <ul class="above-table-actions">
+                    <li class="above-table-action above-table-action-left" ng-if="isInState('view', 'table')"><a href="#" ng-click="goToState('edit', 'current')">ADD STUDENTS TO COHORT</a>
+                    </li>
+                    <li class="above-table-action above-table-action-left"><a href="#" ng-click="toggleSearchOpen()">SEARCH STUDENTS</a>
+                    </li>
+                    <li class="above-table-action above-table-action-left" ng-if="areOptionsSelected()"><a href="#" class="blue" ng-click="clearFilters()">CLEAR FILTERS</a>
+                    </li>
+                    <li class="above-table-action-right above-table-action view-type">
+                        <button href="score_student_view.html" class="btn inga-btn inga-btn-negative inga-icon-btn inactive float-right" ng-click="goToState('current', 'card')"><i class="glyphicon glyphicon-user"></i>
+                        </button>
+                        <button class="btn inga-btn inga-btn-negative inga-icon-btn float-right" ng-click="goToState('current', 'table')"><i class="glyphicon glyphicon-align-justify"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="row extended-filters-row" ng-if="isInState('edit', 'either')">
+                <h2 class="text-center">asdf</h2>
+            </div>
+            <div class="row" ng-if="isInState('either', 'table')" ng-init="setHeadingDropdownWidth()">
+                <table class="inga-table" style="position:relative;">
+                    <tr>
+                        <!--                    <th><span style="float:left;"><input type="checkbox" /></span><span style="float:left;">Title</span><span class="glyphicon glyphicon-search search-icon"></span></th>-->
+                        <th>
+                            <div class="search-box" ng-class="{'open' : searchOpen}"><span class="search-box-title">Student</span><span class="glyphicon glyphicon-search search-icon" ng-click="toggleSearchOpen()"></span><span class="search-box-textbox-span"><input id="studentSearchInput" type="text" class="search-input-textbox" placeholder="Search Title" my-focus></span>
+                            </div>
+                        </th>
+                        <th ng-repeat="heading in headingOptions">
+                            <div class="heading-title" ng-click="openHeading(heading)">{{heading.heading}}
+                                <span class="caret"></span>
+                                <p style="margin-bottom:0; color: #1fbdd5;">{{heading.selected}}</p>
+                            </div>
+                            <div class="table-heading-dropdown" ng-class="{'open' : heading.open, 'other-option-selected' : areOptionsSelected(), 'option-selected' : heading.selected != ''}">
+                                <div class="table-heading-dropdown-content">
+                                    <div class="dropdown-title no-highlight" ng-click="closeHeadings()">{{heading.heading}}
+                                        <span class="caret"></span>
+                                    </div>
+                                    <ul class="dropdown-list" ng-repeat="option in heading.options">
+                                        <li ng-click="selectHeadingOption(heading, option)" ng-class="{'selected' : option == heading.selected}">{{option}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </th>
+                        <th></th>
+                    </tr>
+                    <tr ng-repeat="student in currentStudents">
+                        <td>{{student.name}}</td>
+                        <td>{{student.school}}</td>
+                        <td>{{student.gender}}</td>
+                        <td>{{student.ethnicity}}</td>
+                        <td>{{student.frl}}</td>
+                        <td>{{student.specialEd}}</td>
+                        <td>{{student.migrant}}</td>
+                        <td>{{student.lep}}</td>
+                        <td>{{student.grade}}</td>
+                        <td></td>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</body>
+
+</html>
