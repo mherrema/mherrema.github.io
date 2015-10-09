@@ -1,5 +1,5 @@
-angular.module('todoApp', [])
-    .controller('MyController', function ($scope, $timeout, focus) {
+angular.module('todoApp', ['ui.bootstrap', 'ngAnimate'])
+    .controller('MyController', function ($scope, $timeout, $filter, focus) {
         $scope.state = {
             status: "view",
             display: "table"
@@ -26,10 +26,19 @@ angular.module('todoApp', [])
             if (display != "current") {
                 $scope.state.display = display;
             }
+
+            if ($scope.state.status == "view") {
+                $scope.studentsToDisplay = $scope.cohortStudents;
+            } else {
+                $scope.studentsToDisplay = $scope.currentStudents;
+            }
+
         }
 
         $scope.currentStudents = [{
-                name: "Abdi, Kadija (714222)",
+                firstName: "Kadija",
+                lastName: "Abdi",
+                number: "714222",
                 school: "Allendale",
                 gender: "Female",
                 ethnicity: "Black",
@@ -40,7 +49,9 @@ angular.module('todoApp', [])
                 grade: "08"
     },
             {
-                name: "Abdi, Yusuf (722088)",
+                lastName: "Abdi",
+                firstName: "Yusuf",
+                number: "722088",
                 school: "Allendale",
                 gender: "Male",
                 ethnicity: "Asian",
@@ -51,7 +62,9 @@ angular.module('todoApp', [])
                 grade: "11"
     },
             {
-                name: "Abreu, Elizabeth (770230)",
+                lastName: "Abreu",
+                firstName: "Elizabeth",
+                number: "770230",
                 school: "Caledonia",
                 gender: "Female",
                 ethnicity: "Hispanic",
@@ -62,7 +75,9 @@ angular.module('todoApp', [])
                 grade: "09"
     },
             {
-                name: "Acevedo, Gerzon (730415)",
+                lastName: "Acevedo",
+                firstName: "Gerzon",
+                number: "730415",
                 school: "Jenison",
                 gender: "Male",
                 ethnicity: "Hispanic",
@@ -73,7 +88,9 @@ angular.module('todoApp', [])
                 grade: "10"
     },
             {
-                name: "Agaton, Francisco (728851)",
+                lastName: "Agaton",
+                firstName: "Francisco",
+                number: "728851",
                 school: "Allendale",
                 gender: "Female",
                 ethnicity: "Black",
@@ -83,6 +100,69 @@ angular.module('todoApp', [])
                 lep: "Yes",
                 grade: "08"
     }, ];
+
+        $scope.cohortStudents = angular.copy($scope.currentStudents);
+        $scope.studentsToDisplay = $scope.cohortStudents;
+
+        $scope.isInCohort = function (studentNumber) {
+            var results = $filter('filter')($scope.cohortStudents, {
+                number: studentNumber
+            }, true);
+            return results.length > 0;
+        }
+
+        $scope.removeFromCohort = function (studentNumber) {
+            var results = $filter('filter')($scope.cohortStudents, {
+                number: studentNumber
+            }, true);
+            $scope.cohortStudents.splice($scope.cohortStudents.indexOf(results[0]), 1);
+        }
+
+        $scope.addToCohort = function (studentNumber) {
+            var results = $filter('filter')($scope.currentStudents, {
+                number: studentNumber
+            }, true);
+            $scope.cohortStudents.push(results[0]);
+        }
+
+        $scope.addOrRemoveCard = function (studentNumber) {
+            if (!$scope.isInCohort(studentNumber)) {
+                $scope.addToCohort(studentNumber);
+            } else {
+                $scope.removeFromCohort(studentNumber);
+            }
+        }
+
+        $scope.cardInteraction = function (student) {
+            if ($scope.isInState('view', 'card')) {
+                //pop up
+            } else {
+                $scope.addOrRemoveCard(student.number);
+            }
+        }
+
+        $scope.setRelevantStudentInfo = function () {
+            angular.forEach($scope.currentStudents, function (student, key) {
+                student.relevant = [];
+                if (student.frl == "Free") {
+                    student.relevant.push("Free Lunch");
+                }
+                if (student.frl == "Reduced") {
+                    student.relevant.push("Reduced Lunch");
+                }
+                if (student.specialEd == "Yes") {
+                    student.relevant.push("Special Ed");
+                }
+                if (student.migrant == "Yes") {
+                    student.relevant.push("Migrant");
+                }
+                if (student.lep == "Yes") {
+                    student.relevant.push("LEP");
+                }
+            });
+        }
+
+        $scope.setRelevantStudentInfo();
 
         $scope.toggleSearchOpen = function () {
             $scope.searchOpen = !$scope.searchOpen;
@@ -154,13 +234,12 @@ angular.module('todoApp', [])
         }
 
         $scope.areOptionsSelected = function () {
-            var optionsSelected = false;
             angular.forEach($scope.headingOptions, function (value, key) {
                 if (value.selected != "") {
-                    optionsSelected = true;
+                    return true;
                 }
             });
-            return optionsSelected;
+            return false;
         }
 
         $scope.clearFilters = function () {
@@ -169,6 +248,10 @@ angular.module('todoApp', [])
                 value.selected = "";
             });
         };
+
+        $scope.toggleExtendedFilters = function () {
+            $scope.extendedFiltersOpen = !$scope.extendedFiltersOpen;
+        }
 
         $scope.setHeadingDropdownWidth = function () {
             $timeout(function () {
