@@ -304,6 +304,9 @@ input[type=text].search-input-textbox {
 .search-box-textbox-span {
   overflow: hidden;
 }
+.search-box {
+  height: 24px;
+}
 .search-box .search-box-textbox-span {
   display: none;
 }
@@ -659,103 +662,6 @@ a.editable-click {
   opacity: .5;
   cursor: not-allowed;
 }
-.card {
-  width: 500px;
-  margin: 0 auto;
-}
-.card .info {
-  background: #1fbdd5;
-  padding: 15px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  box-shadow: 0px 0px 8px #bbb;
-}
-.card .info .absent-and-time {
-  color: #83dbe7;
-}
-.card .info .absent-and-time .timestamp {
-  float: right;
-  font-size: 12px;
-}
-.card .info .absent-and-time .mark-absent {
-  font-size: 18px;
-  cursor: pointer;
-}
-.card .info .absent-and-time .mark-absent:hover {
-  color: #a3fbff;
-}
-.card .info .student {
-  color: #fff;
-}
-.card .scores {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  box-shadow: 0px 0px 28px #bbb;
-  height: 120px;
-}
-.card .scores .score-block {
-  display: table-cell;
-  border: #e4e4e4 1px solid;
-  text-align: center;
-}
-.card .scores .score-block .question-title {
-  padding-top: 25px;
-  font-size: 12px;
-}
-.card .scores .score-block .question-score {
-  padding-top: 10px;
-  font-size: 25px;
-}
-.card .scores .score-block .active-view {
-  position: absolute;
-  margin-top: -15px;
-  width: 135px;
-  height: 150px;
-  background: #fff;
-  border: #fe7b23 4px solid;
-  border-radius: 8px;
-  display: none;
-}
-.card .scores .score-block .active-view .question-title {
-  font-size: 12px;
-  padding-top: 35px;
-}
-.card .scores .score-block .active-view .question-score {
-  padding-top: 15px;
-  font-size: 35px;
-}
-.card .scores .score-block:first-child {
-  border-left: none;
-}
-.card .scores .score-block:last-child {
-  border-right: none;
-}
-.card .scores .score-block.active .active-view {
-  display: block;
-}
-.card .input {
-  background: #424242;
-  color: #fff;
-  font-family: "AvenirNextLTPro-Regular";
-}
-.card .input .arrow {
-  margin-top: 130px;
-  font-size: 30px;
-}
-.card .input .input-characters .input-table {
-  width: 100%;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-.card .input .input-characters .input-table tr {
-  margin-bottom: 25px;
-}
-.card .input .input-characters .input-table tr td {
-  font-size: 30px;
-  padding: 10px;
-}
 #ctl00_SPSecurityTrimmedControlRibbon {
   display: none;
 }
@@ -887,4 +793,176 @@ a:visited {
 }
 a:focus {
   text-decoration: none;
+}
+.animate-if.ng-enter,
+.animate-if.ng-leave {
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  position: relative;
+}
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.cards {
+  margin-bottom: 50px;
+}
+.cards .card {
+  box-shadow: 0px 1px 5px #888888;
+  height: 275px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.cards .card.inCohort .heading {
+  background-color: #1fbdd5;
+}
+.cards .card.inCohortEdit {
+  border: #1fbdd5 2px solid;
+}
+.cards .card.inCohortEdit .heading {
+  background-color: #1fbdd5;
+}
+.cards .card .heading {
+  background-color: #afafaf;
+}
+.cards .card .heading .student {
+  background-color: #fff;
+}
+.cards .card .heading .student .student-name {
+  font-family: "AvenirLTStd-Heavy";
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+.cards .card .heading .student .student-number {
+  margin-top: 0;
+}
+.cards .card .heading .grade-block {
+  color: #fff;
+}
+.cards .card .heading .grade-block .grade {
+  font-size: 18px;
+}
+.cards .card .details {
+  padding-top: 10px;
+}
+.cards .card .details .demographics {
+  font-family: "AvenirLTStd-Heavy";
+}
+.cards .card .details .detail-title {
+  margin: 0;
+}
+.cards .card .details .detail {
+  margin-top: 0;
+  font-family: "AvenirLTStd-Heavy";
+}
+.row-height {
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+}
+.col-height {
+  display: table-cell;
+  float: none;
+  height: 100%;
+}
+.col-top {
+  vertical-align: top;
+}
+.col-middle {
+  vertical-align: middle;
+}
+.col-bottom {
+  vertical-align: bottom;
+}
+@media (min-width: 480px) {
+  .row-xs-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+  }
+  .col-xs-height {
+    display: table-cell;
+    float: none;
+    height: 100%;
+  }
+  .col-xs-top {
+    vertical-align: top;
+  }
+  .col-xs-middle {
+    vertical-align: middle;
+  }
+  .col-xs-bottom {
+    vertical-align: bottom;
+  }
+}
+@media (min-width: 768px) {
+  .row-sm-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+  }
+  .col-sm-height {
+    display: table-cell;
+    float: none;
+    height: 100%;
+  }
+  .col-sm-top {
+    vertical-align: top;
+  }
+  .col-sm-middle {
+    vertical-align: middle;
+  }
+  .col-sm-bottom {
+    vertical-align: bottom;
+  }
+}
+@media (min-width: 992px) {
+  .row-md-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+  }
+  .col-md-height {
+    display: table-cell;
+    float: none;
+    height: 100%;
+  }
+  .col-md-top {
+    vertical-align: top;
+  }
+  .col-md-middle {
+    vertical-align: middle;
+  }
+  .col-md-bottom {
+    vertical-align: bottom;
+  }
+}
+@media (min-width: 1200px) {
+  .row-lg-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+  }
+  .col-lg-height {
+    display: table-cell;
+    float: none;
+    height: 100%;
+  }
+  .col-lg-top {
+    vertical-align: top;
+  }
+  .col-lg-middle {
+    vertical-align: middle;
+  }
+  .col-lg-bottom {
+    vertical-align: bottom;
+  }
 }

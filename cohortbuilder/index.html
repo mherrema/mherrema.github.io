@@ -6,9 +6,12 @@
     <style>
         @import url('fonts/avenir-regular/AvenirNextLTPro-Regular.css');
         @import url('fonts/avenir-medium/AvenirLTStd-Medium.css');
+        @import url('fonts/avenir-heavy/AvenirLTStd-Heavy.css');
     </style>
     <link rel="stylesheet" href="css/cohort-builder.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+    <script src="js/ui-bootstrap.js"></script>
     <script src="js/app.js"></script>
 </head>
 
@@ -31,10 +34,10 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right" ng-cloak>
-                        <li ng-if="isInState('edit', 'either')"><a href="#" class="btn inga-btn inga-btn-positive" ng-click="goToState('view', 'current')"><i class="glyphicon glyphicon-ok"></i> OK</a></li>
-                        <li ng-if="isInState('view', 'either')"><a href="#" class="btn inga-btn inga-btn-negative">Rename Cohort</a></li>
-                        <li ng-if="isInState('view', 'either')"><a href="#" class="btn inga-btn inga-btn-negative">Delete Cohort</a></li>
-                        <li ng-if="isInState('view', 'either')"><a href="#" class="btn inga-btn inga-btn-positive">Publish Cohort</a></li>
+                        <li ng-if="isInState('edit', 'either')" class="animate-if"><a href="#" class="btn inga-btn inga-btn-positive" ng-click="goToState('view', 'current')"><i class="glyphicon glyphicon-ok"></i> OK</a></li>
+                        <li ng-if="isInState('view', 'either')" class="animate-if"><a href="#" class="btn inga-btn inga-btn-negative">Rename Cohort</a></li>
+                        <li ng-if="isInState('view', 'either')" class="animate-if"><a href="#" class="btn inga-btn inga-btn-negative">Delete Cohort</a></li>
+                        <li ng-if="isInState('view', 'either')" class="animate-if"><a href="#" class="btn inga-btn inga-btn-positive">Publish Cohort</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -49,27 +52,31 @@
                 <ul class="above-table-actions">
                     <li class="above-table-action above-table-action-left" ng-if="isInState('view', 'table')"><a href="#" ng-click="goToState('edit', 'current')">ADD STUDENTS TO COHORT</a>
                     </li>
+                    <li class="above-table-action above-table-action-left" ng-if="isInState('view', 'card')"><a href="#" ng-click="goToState('edit', 'current')">Change Students</a>
+                    </li>
                     <li class="above-table-action above-table-action-left"><a href="#" ng-click="toggleSearchOpen()">SEARCH STUDENTS</a>
                     </li>
+                    <li class="above-table-action above-table-action-left" ng-if="isInState('edit', 'either')"><a href="#" ng-click="toggleExtendedFilters()" ng-class="{'blue' : extendedFiltersOpen}">Extended Filters</a>
+                    </li>
+                    
                     <li class="above-table-action above-table-action-left" ng-if="areOptionsSelected()"><a href="#" class="blue" ng-click="clearFilters()">CLEAR FILTERS</a>
                     </li>
                     <li class="above-table-action-right above-table-action view-type">
-                        <button href="score_student_view.html" class="btn inga-btn inga-btn-negative inga-icon-btn inactive float-right" ng-click="goToState('current', 'card')"><i class="glyphicon glyphicon-user"></i>
+                        <button href="score_student_view.html" class="btn inga-btn inga-btn-negative inga-icon-btn float-right" ng-class="{'inactive' : isInState('either', 'table')}" ng-click="goToState('current', 'card')"><i class="glyphicon glyphicon-user"></i>
                         </button>
-                        <button class="btn inga-btn inga-btn-negative inga-icon-btn float-right" ng-click="goToState('current', 'table')"><i class="glyphicon glyphicon-align-justify"></i>
+                        <button class="btn inga-btn inga-btn-negative inga-icon-btn float-right" ng-class="{'inactive' : isInState('either', 'card')}" ng-click="goToState('current', 'table')"><i class="glyphicon glyphicon-align-justify"></i>
                         </button>
                     </li>
                 </ul>
             </div>
-            <div class="row extended-filters-row" ng-if="isInState('edit', 'either')">
-                <h2 class="text-center">asdf</h2>
+            <div class="row extended-filters-row" ng-if="isInState('edit', 'either')" collapse="!extendedFiltersOpen">
+                <h2 class="text-center">Extended Filters Here</h2>
             </div>
-            <div class="row" ng-if="isInState('either', 'table')" ng-init="setHeadingDropdownWidth()">
+            <div class="row animate-if" ng-if="isInState('either', 'table')" ng-init="setHeadingDropdownWidth()">
                 <table class="inga-table" style="position:relative;">
                     <tr>
-                        <!--                    <th><span style="float:left;"><input type="checkbox" /></span><span style="float:left;">Title</span><span class="glyphicon glyphicon-search search-icon"></span></th>-->
                         <th>
-                            <div class="search-box" ng-class="{'open' : searchOpen}"><span class="search-box-title">Student</span><span class="glyphicon glyphicon-search search-icon" ng-click="toggleSearchOpen()"></span><span class="search-box-textbox-span"><input id="studentSearchInput" type="text" class="search-input-textbox" placeholder="Search Title" my-focus></span>
+                            <div class="search-box no-highlight" ng-class="{'open' : searchOpen}"><span class="search-box-title">Student</span><span class="glyphicon glyphicon-search search-icon" ng-click="toggleSearchOpen()"></span><span class="search-box-textbox-span"><input id="studentSearchInput" type="text" class="search-input-textbox" placeholder="Search Title" my-focus></span>
                             </div>
                         </th>
                         <th ng-repeat="heading in headingOptions">
@@ -90,8 +97,8 @@
                         </th>
                         <th></th>
                     </tr>
-                    <tr ng-repeat="student in currentStudents">
-                        <td>{{student.name}}</td>
+                    <tr ng-repeat="student in studentsToDisplay">
+                        <td>{{student.lastName}}, {{student.firstName}} ({{student.number}})</td>
                         <td>{{student.school}}</td>
                         <td>{{student.gender}}</td>
                         <td>{{student.ethnicity}}</td>
@@ -105,6 +112,37 @@
 
 
                 </table>
+            </div>
+            <div class="row animate-if" ng-if="isInState('either', 'card')">
+                <div class="cards">
+                    <div ng-repeat="student in studentsToDisplay" class="col-sm-3">
+                        <div class="card" ng-class="{'inCohort' : isInState('view', 'card'), 'inCohortEdit' : (isInState('edit', 'card') && isInCohort(student.number))}" ng-click="cardInteraction(student)">
+                            <div class="heading">
+                                <div class="col-height col-xs-9 student">
+                                    <h3 class="student-name">{{student.firstName}} {{student.lastName}}</h3>
+                                    <h4 class="student-number">{{student.number}}</h4>
+                                </div>
+                                <div class="col-height col-middle col-xs-3 grade-block text-center">
+                                    <span class="grade-title">GRADE</span>
+                                    <span class="grade">{{student.grade}}</span>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="col-xs-12">
+                                <p class="demographics"><span>{{student.ethnicity}} </span><span>{{student.gender}}</span></p>
+                                    </div>
+                                <div class="col-xs-12">
+                                    <h6 class="detail-title">SCHOOL</h6>
+                                    <h4 class="detail">{{student.school}}</h4>
+                                </div>
+                                <div class="col-xs-12" ng-repeat="detail in student.relevant">
+                                    <h4 class="detail">{{detail}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
             </div>
         </div>
     </div>
