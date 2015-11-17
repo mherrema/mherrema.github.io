@@ -1,0 +1,139 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+      <style>
+          body{
+              font-family: sans-serif;
+          }
+      </style>
+  </head>
+  <body ng-controller="MyController">
+      <h1>Ma-Dolly Thread Colors</h1>
+      <div style="width: 20%; float: left;" ng-repeat="color in colors">
+        <div style="width: 100px; height: 100px; background: #{{color.hex}}; border: #efefef 1px solid;"></div>
+          <p>{{color.name}}</p>
+      </div>
+      <script>var app = angular.module('myApp', [])
+    .controller('MyController', function ($scope) {
+        $scope.colors = [
+            {
+                hex: "ffffff",
+                name: "White"
+            },{
+                hex: "cecfd1",
+                name: "Silver"
+            },{
+                hex: "9e9dad",
+                name: "Pewter"
+            },{
+                hex: "635761",
+                name: "Dark Gray"
+            }, {
+                hex: "000000",
+                name: "Black"
+            }, {
+                hex: "f7f8cf",
+                name: "Cream Brown"
+            },{
+                hex: "e7e1cb",
+                name: "Beige"
+            }, {
+                hex: "f8f2e4",
+                name: "Linen"
+            }, {
+                hex: "efe0d9",
+                name: "Flesh Pink"
+            },{
+                hex: "f0d4d8",
+                name: "Salmon Pink"
+            },  {
+                hex: "efb9c6",
+                name: "Pink"
+            },{
+                hex: "fa96b8",
+                name: "Deep Rose"
+            },{
+                hex: "e96077",
+                name: "Dark Fuchsia"
+            }, {
+                hex: "fa8f85",
+                name: "Vermillion"
+            },{
+                hex: "e6504a",
+                name: "Red"
+            },{
+                hex: "fda467",
+                name: "Tangerine"
+            },{
+                hex: "e7b873",
+                name: "Deep Gold"
+            }, {
+                hex: "eec269",
+                name: "Orange"
+            }, {
+                hex: "f9f08f",
+                name: "Yellow"
+            },{
+                hex: "cbdeae",
+                name: "Fresh Green"
+            },{
+                hex: "accea8",
+                name: "Mint Green"
+            },{
+                hex: "a2ae65",
+                name: "Moss Green"
+            },{
+                hex: "9cd071",
+                name: "Lime Green"
+            }, {
+                hex: "478557",
+                name: "Emerald Green"
+            }, {
+                hex: "6aa19b",
+                name: "Teal Green"
+            },{
+                hex: "84a7bf",
+                name: "Sky Blue"
+            },{
+                hex: "69a1c8",
+                name: "Electric Blue"
+            }, {
+                hex: "6e82bf",
+                name: "Blue"
+            }, {
+                hex: "5e61a3",
+                name: "Prussian Blue"
+            },{
+                hex: "b3b3dc",
+                name: "Cornflower Blue"
+            }, {
+                hex: "ddb9d8",
+                name: "Light Lilac"
+            }, {
+                hex: "bc8ec2",
+                name: "Lilac"
+            },{
+                hex: "c187af",
+                name: "Magenta"
+            },     {
+                hex: "b17cc7",
+                name: "Purple"
+            },{
+                hex: "ada97a",
+                name: "Brass"
+            }, {
+                hex: "c2a389",
+                name: "Light Brown"
+            },{
+                hex: "cb8264",
+                name: "Clay Brown"
+            },  {
+                hex: "706053",
+                name: "Dark Brown"
+            }    ];
+
+
+    });</script>
+  </body>
+</html>
