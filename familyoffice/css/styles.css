@@ -13,26 +13,63 @@ h5,
 h6 {
   font-family: 'roboto';
 }
+.action-row {
+  padding-top: 1em;
+}
+.action-row .action-button {
+  /* button bg: */
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
+  border-radius: 2px;
+  font-family: Roboto-Medium;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 19px;
+  width: 100%;
+  display: block;
+  margin-bottom: 0;
+  border: #383340 2px solid;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  transition: box-shadow 0.2s ease;
+}
+.action-row .action-button.action-button-primary {
+  background: #383340;
+  color: #FFFFFF;
+}
+.action-row .action-button.action-button-secondary {
+  color: #383340;
+  background: #FFFFFF;
+}
+.action-row .action-button:focus {
+  outline: none;
+}
+.action-row .action-button:hover {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12), 0px 2px 8px 0px rgba(0, 0, 0, 0.24);
+}
+.action-row .action-button:active {
+  box-shadow: none;
+}
 .activity-card-wrapper .activity-card {
   background-color: #fff;
   margin: 1em;
   padding: 1em;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
 }
-.activity-card-wrapper .activity-card .badge-column .card-badge .primary-icon {
+.activity-card-wrapper .activity-card .activity-card-top .badge-column .card-badge .primary-icon {
   font-size: .8em;
 }
-.activity-card-wrapper .activity-card .card-content .card-title {
+.activity-card-wrapper .activity-card .activity-card-top .card-content .card-title {
   margin-bottom: 0;
   font-size: .9em;
 }
-.activity-card-wrapper .activity-card .card-content .card-description {
+.activity-card-wrapper .activity-card .activity-card-top .card-content .card-description {
   color: #787878;
   font-size: .9em;
   margin-bottom: 0;
   line-height: 1.4;
 }
-.activity-card-wrapper .activity-card .date-time-block {
+.activity-card-wrapper .activity-card .activity-card-top .date-time-block {
   float: right;
   position: absolute;
   right: 0;
@@ -41,7 +78,7 @@ h6 {
   margin-top: 1em;
   padding-bottom: 0;
 }
-.activity-card-wrapper .activity-card .date-time-block .date-time {
+.activity-card-wrapper .activity-card .activity-card-top .date-time-block .date-time {
   color: #787878;
   font-size: .8em;
   margin-bottom: 0;
