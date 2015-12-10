@@ -24,6 +24,7 @@
     <script src="bower_components/masonry/masonry.js"></script>
     <script src="bower_components/imagesloaded/imagesloaded.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-touch.js"></script>
     <script src="bower_components/angular-masonry/angular-masonry.js"></script>
 </head>
 
@@ -59,7 +60,7 @@
     </div>
 
     <script>
-        angular.module('masonryApp', ['wu.masonry']).
+        angular.module('masonryApp', ['wu.masonry', 'ngTouch']).
         controller('DemoCtrl', function ($scope, $timeout) {
             $scope.cardOpen = false;
             $scope.cardIndexOpen = [false, false, false, false, false];
