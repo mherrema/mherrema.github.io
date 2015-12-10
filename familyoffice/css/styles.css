@@ -97,6 +97,9 @@ h6 {
   .card-brick {
     width: 50%;
   }
+  .card-brick.open {
+    height: 95vh !important;
+  }
   .card-brick .card-wrapper {
     padding: 1.7em;
   }
