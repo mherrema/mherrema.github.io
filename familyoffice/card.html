@@ -24,13 +24,14 @@
     <script src="bower_components/masonry/masonry.js"></script>
     <script src="bower_components/imagesloaded/imagesloaded.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-touch.js"></script>
+<!--    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-touch.js"></script>-->
     <script src="bower_components/angular-masonry/angular-masonry.js"></script>
+    <script src="js/fastclick.js"></script>
 </head>
 
 <body ng-app="masonryApp" ng-controller="DemoCtrl" ng-class="{'card-open' : cardOpen}">
     <div ng-init="setCardHeights()">
-        <div >
+        <div>
             <div masonry preserve-order>
                 <div class="masonry-brick card-brick" ng-repeat="project in projects" ng-click="toggleCard($index)" ng-class="{'open' : cardIndexOpen[$index], 'isLoaded' : isLoaded}">
                     <div class="card-wrapper">
@@ -60,7 +61,10 @@
     </div>
 
     <script>
-        angular.module('masonryApp', ['wu.masonry', 'ngTouch']).
+        angular.module('masonryApp', ['wu.masonry']).
+        run(function () {
+            FastClick.attach(document.body);
+        }).
         controller('DemoCtrl', function ($scope, $timeout) {
             $scope.cardOpen = false;
             $scope.cardIndexOpen = [false, false, false, false, false];
@@ -69,43 +73,45 @@
                 date: "Jan 4, 2016",
                 status: "On Track",
                 numRequests: 3
-            },{
+            }, {
                 title: "907 Trust Distribution Changes Title",
                 date: "Dec 2, 2015",
                 status: "Overdue",
                 numRequests: 1
-            },{
+            }, {
                 title: "907 Trust Distribution Changes Title",
                 date: "Jan 4, 2016",
                 status: "On Track",
                 numRequests: 3
-            },{
+            }, {
                 title: "Sand Lake Expansion",
                 date: "Jan 4, 2016",
                 status: "On Track",
                 numRequests: 3
-            },{
+            }, {
                 title: "Sand Lake Expansion",
                 date: "Jan 4, 2016",
                 status: "On Track",
                 numRequests: 3
             }];
 
-            $scope.toggleCard = function(index){
+            $scope.toggleCard = function (index) {
                 $scope.cardOpen = !$scope.cardOpen;
                 $scope.cardIndexOpen[index] = !$scope.cardIndexOpen[index];
             };
 
             $scope.setCardHeights = function () {
                 console.log("here");
-            $timeout(function () {
-                var cards = $(".card-brick");
-                for (var i = 0; i < cards.length; i++) {
+                $timeout(function () {
+                    var cards = $(".card-brick");
+                    for (var i = 0; i < cards.length; i++) {
                         $(cards[i]).height($(cards[i]).outerHeight());
-                };
-                $timeout(function(){$scope.isLoaded = true;}, 1000);
-            });
-        };
+                    };
+                    $timeout(function () {
+                        $scope.isLoaded = true;
+                    }, 1000);
+                });
+            };
 
         });
     </script>
